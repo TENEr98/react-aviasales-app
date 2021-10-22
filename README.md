@@ -26,4 +26,3 @@ yarn dev
 ```sh
 yarn build
 ```
-# react-aviasales-app
