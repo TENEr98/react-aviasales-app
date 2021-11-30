@@ -1,8 +1,10 @@
 import axios from 'axios'
 
 const baseURL = import.meta.env.VITE_BASE_URL
+const baseImgURL = import.meta.env.VITE_BASE_UMG_URL
 
 const instance = axios.create({ baseURL })
+const instanceImg = axios.create({ baseImgURL })
 
 instance.interceptors.request.use(
   (config) => {
@@ -22,4 +24,17 @@ instance.interceptors.response.use(
   }
 )
 
-export const MovieAPI = {}
+export const AviasalesAPI = {
+  getId() {
+    return instance
+      .get(`/search`)
+      .then((response) => response)
+      .catch((err) => err.response)
+  },
+  getTickets(id) {
+    return instance
+      .get(`/tickets?searchId=${id}`)
+      .then((response) => response)
+      .catch((err) => err.response)
+  }
+}

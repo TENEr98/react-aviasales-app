@@ -11,7 +11,6 @@ cd react-aviasales-app
 
 Create file .env.local Paste Token and Base Url into file
 
-- VITE_TOKEN_KEY=
 - VITE_BASE_URL=
 
 # Run

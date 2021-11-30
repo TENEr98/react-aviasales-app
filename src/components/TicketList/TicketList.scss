@@ -1,0 +1,21 @@
+.ticket__list_container {
+  display: flex;
+  justify-content: center;
+
+  .ticket__list {
+    width: 26.25rem;
+
+    margin: 20px 0;
+    padding: 0;
+
+    .ticket__item {
+      height: 11.25rem;
+      width: 100%;
+      list-style: none;
+      margin-bottom: 1.25rem;
+    }
+    .ticket__item:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

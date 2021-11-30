@@ -1,0 +1,56 @@
+.ticket__container {
+  height: 11.25rem;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 0.3125rem;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem;
+
+  .ticket__price_logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .ticket__price {
+      font-weight: 600;
+      font-size: 24px;
+      color: #2196f3;
+      font-family: 'Open Sans Regular';
+      margin: 0;
+    }
+    .ticket__logo {
+      width: 6.25rem;
+      height: 2.25rem;
+    }
+  }
+  .ticket__details {
+    &:last-child {
+      margin-bottom: 0;
+    }
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    .ticket__location_time,
+    .ticket__stops {
+      min-width: 3.75rem;
+      width: 6.25rem;
+      max-width: 8.75rem;
+      display: flex;
+      flex-direction: column;
+
+      .text-grey {
+        color: rgba(160, 176, 185, 1);
+        text-transform: uppercase;
+        font-family: 'Open Sans Regular';
+        font-size: 0.75em;
+        line-height: 1.125rem;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+      }
+      .text-grey + span {
+        color: #4a4a4a;
+      }
+    }
+  }
+}

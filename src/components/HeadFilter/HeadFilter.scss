@@ -1,0 +1,12 @@
+.head_filter__blog {
+  display: flex;
+  justify-content: center;
+
+  .ant-radio-button + span {
+    text-transform: uppercase;
+    font-family: 'Open Sans SemiBold';
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+  }
+}
