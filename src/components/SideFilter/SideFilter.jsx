@@ -32,24 +32,33 @@ const DEFAULT_CHECKBOX = [
   }
 ]
 
-const SideFilter = () => {
+const SideFilter = ({ filterTickets }) => {
   const [checkboxList, setCheckboxList] = useState(DEFAULT_CHECKBOX)
 
   const onCheckboxChange = ({ target: { checked, name } }) => {
     const tempCheckbox = [...checkboxList]
-    // tempCheckbox[0].value = true
-
-    if (isNaN(name)) {
-      tempCheckbox.forEach((item) => (item.value = checked))
-    }
     if (typeof Number(name) === 'number') {
       tempCheckbox[0].value = false
       tempCheckbox.forEach(
         (item) => item.name === name && (item.value = checked)
       )
     }
+    if (tempCheckbox[0].value === false) {
+      const sliceFilters = tempCheckbox.slice(1)
+      const isAllChecked = sliceFilters.every((item) => item.value === true)
+      tempCheckbox[0].value = isAllChecked
+    }
+    if (isNaN(name)) {
+      tempCheckbox.forEach((item) => (item.value = checked))
+    }
+    const checkedFilters = tempCheckbox
+      .map((item) => item.value === true && item.name)
+      .filter(Boolean)
+
+    filterTickets(checkedFilters)
     setCheckboxList(tempCheckbox)
   }
+
   return (
     <div className="side_filter__blog">
       <div className="side_filter__container">

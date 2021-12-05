@@ -1,12 +1,19 @@
 import React from 'react'
 import { Radio } from 'antd'
 
-import './HeadFilter.scss'
+import './HeadSort.scss'
 
-const HeadFilter = () => {
+const HeadSort = ({ sortTickets }) => {
+  const onChangeRadioBtn = ({ target: { value } }) => sortTickets(value)
+
   return (
     <div className="head_filter__blog">
-      <Radio.Group optionType="button" buttonStyle="solid" size="large">
+      <Radio.Group
+        optionType="button"
+        buttonStyle="solid"
+        size="large"
+        onChange={onChangeRadioBtn}
+      >
         <Radio.Button value="cheap" type="primary">
           Самые Дешёвые
         </Radio.Button>
@@ -21,4 +28,4 @@ const HeadFilter = () => {
   )
 }
 
-export default HeadFilter
+export default HeadSort

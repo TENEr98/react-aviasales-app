@@ -43,13 +43,16 @@
         color: rgba(160, 176, 185, 1);
         text-transform: uppercase;
         font-family: 'Open Sans Regular';
-        font-size: 0.75em;
+        font-size: 0.75rem;
         line-height: 1.125rem;
         letter-spacing: 0.5px;
         font-weight: 600;
       }
       .text-grey + span {
+        font-family: 'Open Sans Regular';
+        font-weight: 600;
         color: #4a4a4a;
+        font-size: 0.875rem;
       }
     }
   }

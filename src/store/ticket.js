@@ -17,7 +17,10 @@ export const getTickets = createAsyncThunk(
   'tickets/getTickets',
   async (searchId) => {
     const response = await AviasalesAPI.getTickets(searchId)
-    return response?.data?.tickets
+    if (response.status === 200) {
+      return response?.data?.tickets
+    }
+    return (response.error = 'ERROR')
   }
 )
 
