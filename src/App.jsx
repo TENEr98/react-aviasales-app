@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { getSearchId, getTickets } from './store/ticket'
@@ -20,10 +20,11 @@ const App = () => {
   }, [])
 
   useEffect(() => {
-    if (searchId.length > 1) dispatch(getTickets(searchId))
+    if (searchId?.length > 1) dispatch(getTickets(searchId))
   }, [dispatch, searchId])
 
   console.log(tickets, loading)
+  if (!loading && !tickets?.length) return null
 
   return (
     <div className="wrapper">
@@ -31,7 +32,7 @@ const App = () => {
         <Header />
         <HeadFilter />
         <SideFilter />
-        {!loading ? <TicketList tickets={tickets} /> : null}
+        <TicketList tickets={tickets} />
       </div>
     </div>
   )
